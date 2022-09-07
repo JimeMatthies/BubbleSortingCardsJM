@@ -34,11 +34,69 @@ console.log(getCard());
 document.getElementById("draw-btn").addEventListener("click", addCard);
 
 function addCard() {
-  for (let i = 0; i < usernumber.value; i++) {
+  let cardvalue = usernumber.value;
+  document.querySelector("#cardfrominput").remove();
+
+  for (let i = 0; i < cardvalue; i++) {
+    let newCard = document.createElement("div");
+    console.log(newCard);
+    newCard.classList.add("card");
+    let newCardNumber = document.createTextNode(getCard());
+    console.log(newCardNumber);
+    newCard.appendChild(newCardNumber);
+    document.querySelector("#cardfrominput").appendChild(newCard);
+  }
+}
+
+/* function addCard() {
+  let cardvalue = usernumber.value;
+  console.log(cardvalue);
+  for (let i = 0; i < cardvalue; i++) {
+    let newCard = document.createElement("div");
+    newCard.classList.add("card");
+    let newCardNumber = document.createTextNode(getCard());
+    console.log(newCardNumber);
+    newCard.appendChild(newCardNumber);
+    console.log(newCard.appendChild(newCardNumber));
+    document.querySelector("#cardfrominput").appendChild(newCard);
+    console.log(cardvalue);
+  }
+} */
+
+/* function addCard() {
+  let cardvalue = usernumber.value;
+  console.log(cardvalue);
+  for (let i = 0; i < cardvalue; i++) {
+    let newCard = document.createElement("div");
+    newCard.classList.add("card");
+    let newCardNumber = document.createTextNode(getCard());
+    newCard.appendChild(newCardNumber);
+    document.querySelector("#cardfrominput").appendChild(newCard);
+    console.log(cardvalue);
+  }
+} */
+
+/* function addCard() {
+  let cardvalue = usernumber.value;
+  for (let i = 0; i < cardvalue; i++) {
     let newCard = document.createElement("div");
     newCard.classList.add("card");
     let newCardNumber = document.createTextNode(getCard());
     newCard.appendChild(newCardNumber);
     document.querySelector("#cardfrominput").appendChild(newCard);
   }
-}
+} */
+
+/* function addCard() {
+  for (let i = 0; i < usernumber.value; i++) {
+    if (usernumber !== "") {
+      let cardvalue = usernumber.value;
+      let newCard = document.createElement("div");
+      newCard.classList.add("card");
+      let newCardNumber = document.createTextNode(getCard());
+      newCard.appendChild(newCardNumber);
+      document.querySelector("#cardfrominput").appendChild(newCard);
+    } else {
+    }
+  }
+} */
