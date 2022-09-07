@@ -34,13 +34,11 @@ console.log(getCard());
 document.getElementById("draw-btn").addEventListener("click", addCard);
 
 function addCard() {
-  if (usernumber.value === "1") {
+  for (let i = 0; i < usernumber.value; i++) {
     let newCard = document.createElement("div");
     newCard.classList.add("card");
     let newCardNumber = document.createTextNode(getCard());
     newCard.appendChild(newCardNumber);
-    return document.querySelector("#cardfrominput").appendChild(newCard);
-  } else {
-    console.log("need number from user");
+    document.querySelector("#cardfrominput").appendChild(newCard);
   }
 }
