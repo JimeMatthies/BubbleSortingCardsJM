@@ -3,27 +3,49 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello Rigo with Vanilla.js</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0/js/bootstrap.min.js"
+      integrity="sha512-8Y8eGK92dzouwpROIppwr+0kPauu0qqtnzZZNEF8Pat5tuRNJxJXCkbQfJ0HlUG3y1HB3z18CSKmUo7i2zcPpg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <link
       rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
-      integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
       crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
-    <link rel="shortcut icon" href="./4geeks.ico" />
+    <title>Bubble Sorting Cards</title>
   </head>
   <body>
     <div class="container-fluid text-center">
-      <h1 class="mt-5">Hello Rigo!</h1>
-      <img src="./rigo-baby.jpg" />
-      <p class="alert alert-warning mt-4">
-        If this text is <b>not</b> centered and <b>yellow</b>, you probably have
-        an error
-      </p>
-      <div class="fixed-bottom p-4">
-        Made with ❤️ by
-        <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
+      <div class="row mt-5 justify-content-md-center align-items-center">
+        <div class="col-2 px-0">
+          <input
+            type="number"
+            id="usernumber"
+            min="1"
+            max="9"
+            step="1"
+            value="1"
+          />
+        </div>
+        <div class="col-2">
+          <button id="draw-btn">Draw</button>
+        </div>
+        <div class="col-2">
+          <button id="sort-btn">Sort</button>
+        </div>
       </div>
+      <div
+        class="row mt-5 justify-content-md-center align-items-center"
+        id="cardfrominput"
+      ></div>
+      <div
+        class="row mt-5 justify-contect-md-center aling-items-center"
+        id="firstsort"
+      ></div>
     </div>
   </body>
 </html>
