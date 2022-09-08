@@ -27,6 +27,7 @@ const ranks = [
 let cardSection = document.querySelector("#cardsfrominput");
 
 document.getElementById("draw-btn").addEventListener("click", getCards);
+//document.getElementById("sort-btn").addEventListener("click", bubbleSortCards);
 
 function getCards() {
   newDeck = [];
@@ -68,5 +69,3 @@ function getCards() {
   }
   console.log(newDeck);
 }
-
-console.log(newDeck);
