@@ -6,97 +6,60 @@ window.onload = function() {
   console.log("JM was Here!");
 };
 
-const generateDeck = () => {
-  let deck = [];
-  let suits = "♦♥♠♣";
-  let number = "A123456789JQK";
+document.getElementById("draw-btn").addEventListener("click", getCards);
 
-  for (let i = 0; i < suits.length; i++) {
-    for (let j = 0; j < number.length; j++) {
-      let card = "";
-      card += suits[i] + number[j];
-      deck.push(card);
-    }
-  }
-  return deck;
-};
+function getCards() {
+  const suits = ["♣", "♦", "♥", "♠"];
+  const ranks = [
+    "A",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "J",
+    "Q",
+    "K"
+  ];
 
-const getCard = () => {
-  let cardList = generateDeck();
-  let random = Math.round(Math.random() * 52);
+  let newDeck = [];
+  let cardSection = document.querySelector("#cardsfrominput");
 
-  return cardList[random];
-};
+  for (let i = 0; i < inputnumber.value; i++) {
+    let randomsuit = suits[Math.floor(Math.random() * 4)];
+    let randomrank = ranks[Math.floor(Math.random() * 13)];
 
-console.log(generateDeck());
-console.log(getCard());
+    //let color = randomsuit === "♥" || randomsuit === "♦" ? "red" : "black";
 
-document.getElementById("draw-btn").addEventListener("click", addCard);
+    let objCard = {};
+    objCard.suit = randomsuit;
+    objCard.rank = randomrank;
+    console.log(objCard);
+    newDeck.push(objCard);
 
-function addCard() {
-  let cardvalue = usernumber.value;
-  document.querySelector("#cardfrominput").remove();
+    let suitsObtained = newDeck.map(item => item.suit);
+    console.log(suitsObtained);
+    let ranksObtained = newDeck.map(item => item.rank);
+    console.log(ranksObtained);
 
-  for (let i = 0; i < cardvalue; i++) {
-    let newCard = document.createElement("div");
-    console.log(newCard);
-    newCard.classList.add("card");
-    let newCardNumber = document.createTextNode(getCard());
-    console.log(newCardNumber);
-    newCard.appendChild(newCardNumber);
-    document.querySelector("#cardfrominput").appendChild(newCard);
+    let divCard = document.createElement("div");
+    let divRank = document.createElement("div");
+    let divSuitTop = document.createElement("div");
+    let divSuitBot = document.createElement("div");
+
+    divCard.classList.add("card");
+
+    divRank.innerHTML = ranksObtained;
+    divSuitTop.innerHTML = suitsObtained;
+    divSuitBot.innerHTML = suitsObtained;
+
+    cardSection.append(divCard);
+    divCard.append(divSuitTop, divRank, divSuitBot);
+    newDeck = [];
+    console.log(newDeck);
   }
 }
-
-/* function addCard() {
-  let cardvalue = usernumber.value;
-  console.log(cardvalue);
-  for (let i = 0; i < cardvalue; i++) {
-    let newCard = document.createElement("div");
-    newCard.classList.add("card");
-    let newCardNumber = document.createTextNode(getCard());
-    console.log(newCardNumber);
-    newCard.appendChild(newCardNumber);
-    console.log(newCard.appendChild(newCardNumber));
-    document.querySelector("#cardfrominput").appendChild(newCard);
-    console.log(cardvalue);
-  }
-} */
-
-/* function addCard() {
-  let cardvalue = usernumber.value;
-  console.log(cardvalue);
-  for (let i = 0; i < cardvalue; i++) {
-    let newCard = document.createElement("div");
-    newCard.classList.add("card");
-    let newCardNumber = document.createTextNode(getCard());
-    newCard.appendChild(newCardNumber);
-    document.querySelector("#cardfrominput").appendChild(newCard);
-    console.log(cardvalue);
-  }
-} */
-
-/* function addCard() {
-  let cardvalue = usernumber.value;
-  for (let i = 0; i < cardvalue; i++) {
-    let newCard = document.createElement("div");
-    newCard.classList.add("card");
-    let newCardNumber = document.createTextNode(getCard());
-    newCard.appendChild(newCardNumber);
-    document.querySelector("#cardfrominput").appendChild(newCard);
-  }
-} */
-
-/* function addCard() {
-  for (let i = 0; i < usernumber.value; i++) {
-    if (usernumber !== "") {
-      let cardvalue = usernumber.value;
-      let newCard = document.createElement("div");
-      newCard.classList.add("card");
-      let newCardNumber = document.createTextNode(getCard());
-      newCard.appendChild(newCardNumber);
-      document.querySelector("#cardfrominput").appendChild(newCard);
-    } else {
-    }
-  }
-} */
