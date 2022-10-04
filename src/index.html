@@ -21,26 +21,26 @@
   <body>
     <div class="container-fluid text-center justify-contect-center">
       <div class="row mt-5 d-flex justify-content-center align-items-center">
-        <div class="col-2 px-0">
+        <div class="col-md-3 mt-4">
           <label for="inputnumber" class="col-form-label"
             >Ingrese cantidad de cartas:</label
           >
           <input type="number" id="inputnumber" min="2" step="1" value="2" />
         </div>
-        <div class="col-2">
+        <div class="col-md-3 mt-4">
           <button id="draw-btn">Draw</button>
         </div>
-        <div class="col-2">
+        <div class="col-md-3 mt-4">
           <button id="sort-btn">Sort</button>
         </div>
       </div>
       <div
         class="row mt-5 d-flex justify-content-center align-items-center"
-        id="cardsfrominput"
+        id="inputcards"
       ></div>
       <div
         class="row mt-5 d-flex justify-content-center aling-items-center"
-        id="firstsort"
+        id="sortcards"
       ></div>
     </div>
   </body>
